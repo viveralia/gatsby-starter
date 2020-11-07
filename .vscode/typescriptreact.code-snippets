@@ -1,0 +1,52 @@
+{
+  "Gatsby Functional Component": {
+    "prefix": "gc",
+    "body": [
+      "import React, { FC } from 'react'",
+      "",
+      "import { makeStyles } from '@material-ui/core'",
+      "",
+      "export interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}Props {}",
+      "",
+      "const useStyles = makeStyles(theme => ({",
+      "  root: {",
+      "    $2",
+      "  },",
+      "}))",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}: FC<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}Props> = ({}) => {",
+      "  const classes = useStyles()",
+      "",
+      "  return (",
+      "    <div className={classes.root}>$1</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}"
+    ]
+  },
+  "Gatsby Page": {
+    "prefix": "gp",
+    "body": [
+      "import React, { FC } from 'react'",
+      "",
+      "import { makeStyles } from '@material-ui/core'",
+      "",
+      "const useStyles = makeStyles(theme => ({",
+      "  root: {",
+      "    $2",
+      "  },",
+      "}))",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}Page: FC = () => {",
+      "  const classes = useStyles()",
+      "",
+      "  return (",
+      "    <div className={classes.root}>$1</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}Page"
+    ]
+  }
+}
