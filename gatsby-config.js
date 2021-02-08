@@ -17,15 +17,16 @@ module.exports = {
     // Also needs to be changed inside typography.config.theme.ts
     {
       options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            subsets: [`latin`],
-            variants: [`400`, `700`],
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: ["300", "400", "500"],
+            },
+          ],
+        },
       },
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
     },
     // {
     //   options: {
