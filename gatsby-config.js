@@ -3,45 +3,23 @@ module.exports = {
   plugins: [
     {
       options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
       resolve: `gatsby-source-filesystem`,
     },
     {
       options: {
-        component: require.resolve(`./src/layouts/theme.layout.tsx`),
+        background_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        theme_color: `#663399`, // This path is relative to the root of the site.
       },
-      resolve: `gatsby-plugin-layout`,
+      resolve: `gatsby-plugin-manifest`,
     },
-    // Also needs to be changed inside typography.config.theme.ts
-    {
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Roboto",
-              variants: ["300", "400", "500"],
-            },
-          ],
-        },
-      },
-      resolve: `gatsby-plugin-webfonts`,
-    },
-    // {
-    //   options: {
-    //     background_color: ``,
-    //     display: `minimal-ui`,
-    //     icon: `src/assets/pwa-icon.svg`,
-    //     include_favicon: false,
-    //     name: ``,
-    //     short_name: ``,
-    //     start_url: `/`,
-    //     theme_color: ``,
-    //     theme_color_in_head: false,
-    //   },
-    //   resolve: `gatsby-plugin-manifest`,
-    // },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-material-ui`,
     `gatsby-transformer-sharp`,
